@@ -5,13 +5,11 @@ import './app.scss';
 
 function App() {
   const value = useSelector(state => state.value);
-  const history = useSelector(state => state.history);
   const dispatch = useDispatch();
 
   return (
     <div className="container">
       <form className="calculator" name="calc">
-        <input type="text" disabled className="history" name="history" value={history} />
         <input type="text" disabled className="value" name="value" value={value} />
         <span onClick = {() => dispatch(clear())}>c</span>
         <span onClick = {() => dispatch(plusMinus())}>+/-</span>

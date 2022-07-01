@@ -1,120 +1,104 @@
-const initialState = {value: '', history: ''}
+const initialState = {value: '0'}
 
 const reducer = (state = initialState, action) => {
+  const deleteFirstZero = value => {
+    return +value;
+  }
   switch (action.type) {
     case '1':
       return {
         ...state,
-        value:  state.value + '1',
-        history: state.history + '1'
+        value:  deleteFirstZero(state.value + '1')
       };
     case '2':
       return {
         ...state,
-        value:  state.value + '2',
-        history: state.history + '2'
+        value:  deleteFirstZero(state.value + '2')
       };
     case '3':
       return {
         ...state,
-        value:  state.value + '3',
-        history: state.history + '3'
+        value:  deleteFirstZero(state.value + '3')
       };
     case '4':
       return {
         ...state,
-        value:  state.value + '4',
-        history: state.history + '4'
+        value:  deleteFirstZero(state.value + '4')
       };
     case '5':
       return {
         ...state,
-        value:  state.value + '5',
-        history: state.history + '5'
+        value:  deleteFirstZero(state.value + '5')
       };
     case '6':
       return {
         ...state,
-        value:  state.value + '6',
-        history: state.history + '6'
+        value:  deleteFirstZero(state.value + '6')
       };
     case '7':
       return {
         ...state,
-        value:  state.value + '7',
-        history: state.history + '7'
+        value:  deleteFirstZero(state.value + '7')
       };
     case '8':
       return {
         ...state,
-        value:  state.value + '8',
-        history: state.history + '8'
+        value:  deleteFirstZero(state.value + '8')
       };
     case '9':
       return {
         ...state,
-        value:  state.value + '9',
-        history: state.history + '9'
+        value:  deleteFirstZero(state.value + '9')
       };
     case '0':
       return {
         ...state,
-        value:  state.value + '0',
-        history: state.history + '0'
+        value:  deleteFirstZero(state.value + '0')
       };
     case '+/-':
       return {
         ...state,
-        value:  state.value + '+/-',
-        history: state.history + '+/-'
+        value:  -state.value
       };
     case '/':
       return {
         ...state,
-        value:  state.value + '/',
-        history: state.history + '/'
+        value:  state.value + '/'
       };
     case '*':
       return {
         ...state,
-        value:  state.value + '*',
-        history: state.history + '*'
+        value:  state.value + '*'
       };
     case '-':
       return {
         ...state,
-        value:  state.value + '-',
-        history: state.history + '-'
+        value:  state.value + '-'
       };
     case '+':
       return {
         ...state,
-        value:  state.value + '+',
-        history: state.history + '+'
+        value:  state.value + '+'
       };
     case '%':
       return {
         ...state,
-        value:  state.value + '%',
-        history: state.history + '%'
+        value:  state.value / 100
       };
     case '.':
       return {
         ...state,
-        value:  state.value + '.',
-        history: state.history + '.'
+        value:  state.value + '.'
       };
     case 'c':
       return {
         ...state,
-        value:  '',
-        history: ''
+        value: '0'
       };
     case '=':
       return {
         ...state,
-        value:  state.value + '=',
-        history: state.history + '='
+        value:  state.value + '='
       };
     default:
       return state;
